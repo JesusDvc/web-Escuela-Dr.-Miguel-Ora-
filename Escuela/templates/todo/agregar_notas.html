@@ -1,0 +1,44 @@
+{% extends 'Escuela/comun/base.html' %}
+{% block title %}Agregar Notas{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <section class="content-header">
+        <!-- Encabezado del contenido -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Formulario para agregar notas -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Guardar</button>
+            </form>
+
+            <!-- Lista de notas existentes -->
+            <h2>Notas existentes:</h2>
+            <table>
+                <tr>
+                    <th>Matemáticas</th>
+                    <th>Lengua</th>
+                    <th>Ciencias Sociales</th>
+                    <th>Ciencias Naturales</th>
+                    <th>Deporte</th>
+                    <th>Cultura</th>
+                </tr>
+                {% for nota in notas %}
+                <tr>
+                    <td>{{ nota.matematica }}</td>
+                    <td>{{ nota.lengua }}</td>
+                    <td>{{ nota.ciencias_sociales }}</td>
+                    <td>{{ nota.ciencias_naturales }}</td>
+                    <td>{{ nota.deporte }}</td>
+                    <td>{{ nota.cultura }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}

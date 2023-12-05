@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .fondo {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .boton {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="login">
+                    <div class="fondo">
+                        <h2 class="text-center mb-4">Iniciar Sesión</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="usuario">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contrasena">Contraseña</label>
+                                <input type="password" class="form-control" id="contrasena" required>
+                            </div>
+                            <button type="button" class="btn boton btn-block" onclick="iniciarSesion()">Iniciar sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function iniciarSesion() {
+            // Aquí puedes agregar la lógica para verificar las credenciales del usuario
+            // Si las credenciales son correctas, redirige al usuario a home.html
+            window.location.href = 'home.html';
+        }
+    </script>
+</body>
+</html>

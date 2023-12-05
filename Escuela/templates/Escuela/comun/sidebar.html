@@ -1,0 +1,122 @@
+                
+{% load static %} 
+
+
+{% if messages %}
+        {% for message in messages %}
+          {% autoescape off %}{{ message }}{% endautoescape %}
+        {% endfor %}
+      {% endif %}
+<!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/Escuela/panel" class="brand-link">
+      <img src="{% static 'Escuela/dist/img/miguel.png' %}" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Escuela Dr. Miguel Oraá</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'Escuela/dist/img/avatar5.png' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="/Escuela/panel" class="d-block">Username</a>
+        </div>
+      </div>
+
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+          
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Registrar
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/Escuela/Agregar" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agregar estudiante</p>
+                </a>
+              </li>
+            </ul>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Consultar
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/Escuela/Lista1" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listar agregar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Informacion
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/Escuela/informacion" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Informacion de la pagina</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/Escuela/salir" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Salir
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             

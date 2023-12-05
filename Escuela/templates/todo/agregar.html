@@ -1,0 +1,143 @@
+{% extends 'Escuela/comun/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            {% if editar %}
+              <h3 class="title">Editar agregar</h3>
+              <p class="title-description">Cambie los datos del agregar</p>
+            {% else %}
+              <h3 class="title">Agregar Estudiante</h3>
+              <p class="title-description">Introduzca los datos del estudiante</p>
+            {% endif %}
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active">Agregar</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+
+  <section class="content">
+      <div class="container-fluid">
+        <!-- SELECT2 EXAMPLE -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Agregar</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+      <form role="form" autocomplete="off" method="POST" onsubmit="return validarTodo('agregar')">
+      {% csrf_token %}
+
+             <div class="card-body">
+
+             <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="text" class="form-control" id="edad" name="edad">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <textarea class="form-control" id="direccion" name="direccion"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fecha_nac">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="fecha_nac" name="fecha_nac">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="docente">Docente:</label>
+                        <input type="text" class="form-control" id="docente" name="docente">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="grado">Grado:</label>
+                        <input type="text" class="form-control" id="grado" name="grado">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ci_representante">Cédula del Representante:</label>
+                        <input type="text" class="form-control" id="ci_representante" name="ci_representante">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="codigo_notas">Código de Notas:</label>
+                        <input type="text" class="form-control" id="codigo_notas" name="codigo_notas">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="codigo_salon">Código de Salón:</label>
+                        <input type="text" class="form-control" id="codigo_salon" name="codigo_salon">
+                    </div>
+    
+                <!-- /.card-body -->
+                 <center>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Guardar</button>
+
+                    <a href="" class="btn btn-danger"><span class="fa fa-undo"></span> Cancelar</a>
+                </div>
+                </center>
+              </form>
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
+
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+</div>
+  
+
+{% endblock %}
+
+
+
+{% if messages %}
+  {% for message in messages %}
+    {% autoescape off %}{{ message }}{% endautoescape %}
+  {% endfor %}
+{% endif %}
+
+
+
+
+
+

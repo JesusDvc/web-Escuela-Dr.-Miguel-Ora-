@@ -1,0 +1,91 @@
+{% extends "Escuela/comun/base.html" %}
+{% block content %}
+
+{% load static %}
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Lista de los estudiantes</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active">Listado</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section
+
+                            
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Datos</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Nro</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Dirección</th>
+                            <th>Agregar Notas</th>
+                            <th>Eliminar Estudiante</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for fila in tabla %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{ fila.nombre}}</td>
+                    <td>{{ fila.apellido }}</td>
+                    <td>{{ fila.edad }}</td>
+                    <td>{{ fila.direccion }}</td>
+                    <td>
+                        <a href="/agregar_notas id={{ fila.id }}" class="btn btn-primary">Agregar Notas</a>
+                        <a href="/mostrar_notas id={{ fila.id }}" class="btn btn-warning">Ver notas</a>
+                    <td>
+                        <form action="/eliminar id={{ fila.id }}/" method="post">
+                            {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </td>
+                </form>
+                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>Nro</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Dirección</th>
+                            <th>Agregar Notas</th>
+                            <th>Eliminar Estudiante</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.row -->
+      </div
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+  <h1>Editar notas de {{ nota.estudiante.nombre }}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}

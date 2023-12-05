@@ -1,0 +1,66 @@
+{% load static %}
+
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Escuela Dr. Miguel Oraá</title>
+
+
+
+
+      <link href="{% static 'Escuela/vendor/jquery-datetimepicker/jquery.datetimepicker.min.css' %}" rel="stylesheet">
+
+
+      <!-- Font Awesome -->
+      <!-- SweetAlert2 -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' %}">
+      <!-- Toastr -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/toastr/toastr.min.css' %}">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/fontawesome-free/css/all.min.css' %}">
+      <!-- icheck bootstrap -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="{% static 'Escuela/dist/css/adminlte.min.css' %}">
+
+
+      <!-- jsGrid -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/jsgrid/jsgrid.min.css' %}">
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/jsgrid/jsgrid-theme.min.css' %}">
+
+      <!-- DataTables -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/fontawesome-free/css/all.min.css' %}">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Tempusdominus Bootstrap 4 -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+      <!-- iCheck -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+      <!-- JQVMap -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/jqvmap/jqvmap.min.css' %}">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="{% static 'Escuela/dist/css/adminlte.min.css' %}">
+      <!-- overlayScrollbars -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+      <!-- Daterange picker -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/daterangepicker/daterangepicker.css' %}">
+      <!-- summernote -->
+      <link rel="stylesheet" href="{% static 'Escuela/plugins/summernote/summernote-bs4.min.css' %}">
+      <link href="{% static 'Escuela/dist/sweetalert.css' %}" rel="stylesheet" />
+      <script src="{% static 'Escuela/dist/sweetalert-dev.js' %}"></script>
+
+
+
+    </head>
+{% if messages %}
+        {% for message in messages %}
+          {% autoescape off %}{{ message }}{% endautoescape %}
+        {% endfor %}
+      {% endif %}

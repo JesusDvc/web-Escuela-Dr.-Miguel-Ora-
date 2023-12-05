@@ -1,0 +1,22 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% include "Escuela/comun/estilos.html" %}
+
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    {% include "Escuela/comun/header.html" %}
+    {% include "Escuela/comun/sidebar.html" %}
+    {% block content %}
+    {% endblock %}
+    {% include "Escuela/comun/footer.html" %}
+    {% include "Escuela/comun/modal.html" %}
+
+    {% include "Escuela/comun/scripts.html" %}
+
+</div> <!-- Fin de la cosa esta-->
+
+</body>
+</html>

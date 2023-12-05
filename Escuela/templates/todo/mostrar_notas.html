@@ -1,0 +1,69 @@
+{% extends "Escuela/comun/base.html" %}
+{% block content %}
+
+{% load static %}
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Notas de {{ estudiante.nombre }}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+              <li class="breadcrumb-item active">Notas</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section
+
+                
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Notas de {{ estudiante.nombre }}</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Materia</th>
+                            <th>Nota</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemáticas</td>
+                                <td>{{ notas.matematicas }}</td>
+                            </tr>
+                            <tr>
+                                <td>Lengua</td>
+                                <td>{{ notas.lengua }}</td>
+                            </tr>
+                            <tr>
+                                <td>Ciencias Sociales</td>
+                                <td>{{ notas.ciencias_sociales }}</td>
+                            </tr>
+                            <tr>
+                                <td>Ciencias Naturales</td>
+                                <td>{{ notas.ciencias_naturales }}</td>
+                            </tr>
+                            <tr>
+                                <td>Deporte</td>
+                                <td>{{ notas.deporte }}</td>
+                            </tr>
+                            <tr>
+                                <td>Cultura</td>
+                                <td>{{ notas.cultura }}</td>
+                            </tr>
+                        </tbody>
+                      </table>
+{% endblock %}

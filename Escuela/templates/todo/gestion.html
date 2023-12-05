@@ -1,0 +1,48 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+  <h1>Gestión de Estudiantes</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Docente</th>
+        <th scope="col">Grado</th>
+        <th scope="col">Cedula del Representante</th>
+        <th scope="col">Salon</th>
+        <th scope="col">Acciones</th>
+        <th scope="col">Notas</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for estudiante in datos %}
+      <tr>
+        <th scope="row">{{ estudiante.id }}</th>
+        <td>{{ estudiante.nombre }}</td>
+        <td>{{ estudiante.apellido }}</td>
+        <td>{{ estudiante.edad }}</td>
+        <td>{{ estudiante.direccion }}</td>
+        <td>{{ estudiante.fecha_nac }}</td>
+        <td>{{ estudiante.docente }}</td>
+        <td>{{ estudiante.grado }}</td>
+        <td>{{ estudiante.ci_representante }}</td>
+        <td>{{ estudiante.codigo_salon }}</td>
+        <td>
+          <a class="btn btn-info btn-sm" href="{% url 'editar' estudiante.id %}">Editar</a>
+          <a class="btn btn-danger btn-sm" href="{% url 'eliminar' estudiante.id %}">Eliminar</a>
+        </td>
+        <td>
+          <a class="btn btn-success btn-sm" href="{% url 'agregar_notas' estudiante.id %}">Agregar</a>
+          <a class="btn btn-primary btn-sm" href="{% url 'mostrar_notas' estudiante.id %}">Notas</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

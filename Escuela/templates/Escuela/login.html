@@ -1,0 +1,84 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+{% include "Escuela/comun/estilos.html" %}
+
+
+
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-success">
+    <div class="card-header text-center">
+      <a href="" class="h1">Escuela Dr. Miguel Oraá</a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Iniciar sesión</p>
+
+        <form id="login-form" method="POST" required>
+                  {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-user" required id="username" name="username" placeholder="Usuario">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control form-control-user" required id="password" name="password" placeholder="Contraseña">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Recordar
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="text-center mt-2 mb-3">
+            <button type="submit" class="btn btn-success btn-block">Ingresar</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <p class="mb-1">
+        <a href="">Olvido constraseña?</a>
+      </p>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+    
+        <!-- Reference block for JS -->
+        <div class="ref" id="ref">
+            <div class="color-primary"></div>
+            <div class="chart">
+                <div class="color-primary"></div>
+                <div class="color-secondary"></div>
+            </div>
+        </div>
+
+</body>
+</html>
+
+
+{% if messages %}
+  {% for message in messages %}
+    {% autoescape off %}{{ message }}{% endautoescape %}
+  {% endfor %}
+{% endif %}
+
+{% block javascript %}{% endblock %}
